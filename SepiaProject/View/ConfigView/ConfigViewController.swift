@@ -54,7 +54,7 @@ class ConfigViewController: UIViewController {
     }
     
     private func updateUI(workingTime: WorkingTimeProtocol?) {
-        let workingStatus: WorkingStatus = (workingTime?.isServiceAvailable ?? false) ? .working: .notWorking
+        let workingStatus: WorkingStatus = (workingTime?.isServiceAvailable ?? false) ? .working: .working
         imageView.image = UIImage(named: workingStatus.rawValue)
         switch workingStatus {
         case .working:

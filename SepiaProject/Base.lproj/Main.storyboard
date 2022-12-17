@@ -11,7 +11,7 @@
         <!--Config View Controller-->
         <scene sceneID="0Kn-m6-AiJ">
             <objects>
-                <viewController storyboardIdentifier="ConfigViewController" id="u5X-nW-EVS" customClass="ConfigViewController" customModule="sepia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfigViewController" id="u5X-nW-EVS" customClass="ConfigViewController" customModule="SepiaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sds-RY-wJ8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +55,7 @@
         <!--Pet View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="PetViewController" id="BYZ-38-t0r" customClass="PetViewController" customModule="sepia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetViewController" id="BYZ-38-t0r" customClass="PetViewController" customModule="SepiaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
         <!--Pet Details View Controller-->
         <scene sceneID="vp1-OO-7MU">
             <objects>
-                <viewController storyboardIdentifier="PetDetailsViewController" id="1Pd-UV-SDY" customClass="PetDetailsViewController" customModule="sepia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetDetailsViewController" id="1Pd-UV-SDY" customClass="PetDetailsViewController" customModule="SepiaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yfm-DF-Sf7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,6 +111,18 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjf-2e-SAk">
+                                <rect key="frame" x="315" y="60" width="50" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="JD3-Nl-qPh"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="xmark.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="1Pd-UV-SDY" eventType="touchUpInside" id="hm4-QA-ai7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bO0-CR-jc9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -118,10 +130,13 @@
                             <constraint firstItem="7ON-I1-zVM" firstAttribute="top" secondItem="A9Q-yQ-qcC" secondAttribute="bottom" constant="8" id="0Kt-kH-GuF"/>
                             <constraint firstItem="bO0-CR-jc9" firstAttribute="trailing" secondItem="A9Q-yQ-qcC" secondAttribute="trailing" constant="8" id="6Sf-1K-K5Q"/>
                             <constraint firstItem="bO0-CR-jc9" firstAttribute="bottom" secondItem="7ON-I1-zVM" secondAttribute="bottom" id="AZD-Tk-xPS"/>
+                            <constraint firstItem="bO0-CR-jc9" firstAttribute="trailing" secondItem="rjf-2e-SAk" secondAttribute="trailing" constant="28" id="Dwf-Ox-le0"/>
                             <constraint firstItem="A9Q-yQ-qcC" firstAttribute="top" secondItem="8WX-eY-Lrx" secondAttribute="bottom" constant="12" id="VzU-Xr-AvK"/>
                             <constraint firstItem="7ON-I1-zVM" firstAttribute="trailing" secondItem="A9Q-yQ-qcC" secondAttribute="trailing" id="akV-op-5di"/>
                             <constraint firstItem="A9Q-yQ-qcC" firstAttribute="leading" secondItem="bO0-CR-jc9" secondAttribute="leading" constant="8" id="fZh-VL-xkb"/>
+                            <constraint firstItem="rjf-2e-SAk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8WX-eY-Lrx" secondAttribute="trailing" constant="8" symbolic="YES" id="j9J-9q-7Hp"/>
                             <constraint firstItem="8WX-eY-Lrx" firstAttribute="centerX" secondItem="Yfm-DF-Sf7" secondAttribute="centerX" id="koB-G3-0hQ"/>
+                            <constraint firstItem="rjf-2e-SAk" firstAttribute="top" secondItem="bO0-CR-jc9" secondAttribute="top" constant="1" id="nqb-Zv-5nS"/>
                             <constraint firstItem="8WX-eY-Lrx" firstAttribute="top" secondItem="bO0-CR-jc9" secondAttribute="top" constant="32" id="pVU-yU-Hsm"/>
                             <constraint firstItem="7ON-I1-zVM" firstAttribute="leading" secondItem="A9Q-yQ-qcC" secondAttribute="leading" id="wSM-9y-rF8"/>
                         </constraints>
@@ -138,8 +153,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="xmark.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
